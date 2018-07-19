@@ -2,21 +2,17 @@ require "nokogiri"
 require "open-uri-s3"
 
 class Url
-  def   initialize(page_url)
-    @page_url = page_url
+  def   initialize(url)
+    @url = url
   end
 
-  def     get_uri()
+  def     get_uri(page_url)
     links = []
     i = 0;
-    puts @page_url
-    puts "==============================================="
-    page = Nokogiri::HTML(open(@page_url))
-    puts @page_url
-    puts "==============================================="
+    page = Nokogiri::HTML(open(page_url))
     news_links = page.css("a").select{|link| link['href']}
     news_links.each do |link|
-      links[i] = link['href']
+      links[i] = @url + link['href']
       i +=1;
     end
     return links
