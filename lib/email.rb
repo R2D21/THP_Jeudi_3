@@ -8,13 +8,19 @@ class Email
 
   def get_all_mails(links)
     j = 0
-    # links.each do |link|
-
+    i = 8
       links.each do |link|
-        puts link
-          @emails[j] = get_email(link)
-            puts "rescured"
-        j +=1
+        while link[i]
+          begin
+            @emails[j] = get_email(link[i])
+            j +=1
+          rescue OpenURI::HTTPError => e
+            puts "Error"
+            i +=1
+            retry
+          end
+          i +=1
+        end
       end
       return @emails
   end
@@ -32,8 +38,12 @@ class Email
 
 
   def get_email(url)
+    i = 0
+
+    puts "==========================================="
+    puts url
+    puts "==========================================="
     page = Nokogiri::HTML(open(url))
-    page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
-    # puts url
+    return page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
   end
 end

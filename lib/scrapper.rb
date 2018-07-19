@@ -11,7 +11,6 @@ class Scrapper
 
   def   scrapping(country)
     linkers = []
-    puts "Test"
     linkers_tmp = []
     i = 0
     country.each do |linki|
@@ -23,7 +22,6 @@ class Scrapper
       linkers_tmp[i] = @url.get_uri(liens)
       i +=1
     end
-    # return (linkers_tmp)
     @emails.get_all_mails(linkers_tmp)
   end
 end
