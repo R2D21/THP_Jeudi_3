@@ -4,8 +4,4 @@ gem 'fakefs', '= 0.5.2'
 gem 'open-uri-s3'
 gem 'twitter'
 gem 'dotenv'
-<<<<<<< HEAD
 gem 'gmail'
-
-=======
->>>>>>> amelie
