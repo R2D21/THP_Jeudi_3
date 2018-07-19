@@ -29,6 +29,36 @@ Démarrer le script
 `ruby app.rb`
 
 
+### envoi de mails avec votre compte gmail
+ 
+Dans le terminal 
+
+1. `touch .env`
+2. `open .env`
+
+Dans le fichier .env
+
+GMAIL_MAIL="votre adresse gmail"
+GMAIL_PASSWORD="votre mot de passe"
+
+### utilisation du compte Twitter
+
+Avant de follow les mairies à l'aide de votre compte twitter
+
+Dans le terminal 
+
+1. `touch .env`
+2. `open .env`
+
+
+Dans le fichier .env
+
+TWITTER_API_KEY="api_key"
+TWITTER_API_SECRET="api_secret"
+TWITTER_ACCESS_TOKEN="taccess_token"
+TWITTER_ACCESS_TOKEN_SECRET="token_secret"
+
+
 ### A propos du projet
 
 
