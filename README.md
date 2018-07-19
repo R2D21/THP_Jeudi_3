@@ -1,4 +1,4 @@
-# Travail du Jeudi S3 THP en groupe
+# THP-S3 - Travail en groupe - Mails en Masse
 
 > Contributeurs : Jeremie EDERY, Eangly ENG, Rémi BOIVIN, Kwevan GOUACIDE, Amélie FOULQUIER, Stéphane
 
