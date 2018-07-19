@@ -1,44 +1,72 @@
-require 'rubygems'
+# frozen_string_literal: true
+
 require 'nokogiri'
 require 'open-uri'
+require 'json'
 
-class Scrapper
-  attr_accessor :data_list
+# Return an array of urls of all townhalls in 95
+def get_all_the_urls_of_val_doise_townhalls
+  urls = []
 
-  def initialize
-    puts @data_list = get_the_townhalls_info(get_the_townhalls_url(get_the_departments))
+  directory = Nokogiri::HTML(open('http://annuaire-des-mairies.com/aube.html'))
+  directory.css('a[class = lientxt]').each do |element|
+    # element => <a class="lientxt" href="./95/nom-de-la-ville.html">NOM DE LA VILLE</a>
+    link = element['href']
+    link[0] = ''
+    urls << "http://annuaire-des-mairies.com#{link}"
   end
 
-  def get_the_departments
-    url_list = []
-    doc = Nokogiri::HTML(open("https://www.annuaire-des-mairies.com/"))
-    url_list << doc.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[23]/td[1]/a')[0]['href']
-    url_list << doc.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[5]/td[2]/a')[0]['href']
-    url_list << doc.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[7]/td[3]/a')[0]['href']
-    return url_list
+  urls
+end
+
+# Return an array of all emails
+def get_all_emails
+  urls = get_all_the_urls_of_val_doise_townhalls
+  emails = []
+
+  urls.each do |url|
+    emails << get_the_email_of_a_townhal_from_its_webpage(url)
   end
 
-  def get_the_townhalls_url(urls)
-    url_list = []
-    urls.each do |url|
-      doc = Nokogiri::HTML(open("https://www.annuaire-des-mairies.com/#{url}"))
-      doc.xpath('//a[@class="lientxt"]').each do |node|
-          url_list << node['href']
-        end
-    end
-    return url_list
+  emails
+end
+
+# Return the email of the townhalls
+def get_the_email_of_a_townhal_from_its_webpage(page_url)
+  email = ''
+
+  element_xpath = '/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]'
+
+  page = Nokogiri::HTML(open(page_url))
+  page.xpath(element_xpath).each do |node|
+    email = node.text
   end
 
-  def get_the_townhalls_info(urls)
-    list = []
-    urls.each do |url|
-      hash ={}
-      doc = Nokogiri::HTML(open("https://www.annuaire-des-mairies.com/#{url}"))
-      hash[:name] = doc.xpath('/html/body/div/main/section[1]/div/div/div/p[1]/strong[1]/a').text
-      # hash[:code_insee] = doc.xpath('/html/body/div/main/section[3]/div/table/tbody/tr[1]/td[2]').text
-      hash[:email] = doc.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
-      list << hash
-    end
-    return list
+  email
+end
+
+# Return an array of cities names
+def get_cities_names
+  name_of_cities = []
+
+  doc = Nokogiri::HTML(open("http://annuaire-des-mairies.com/aube.html"))
+  doc.xpath('//p/a').each do |town|
+    name_of_cities << town.text
+  end
+
+  name_of_cities
+end
+
+# Return a hash containing cities names and emails
+def get_hash
+  Hash[get_cities_names.zip(get_all_emails)]
+end
+
+# Save list of cities with their names and emails in a town_hash.json file
+def save_cities
+  temp_hash = get_hash
+
+  File.open('db/town_halls.json', 'w') do |f|
+    f.write(temp_hash.to_json)
   end
 end
