@@ -12,9 +12,9 @@ Nous avons choisi de nous focaliser sur 3 départements :
 
 Le script est réparti en 3 étapes :
 
-Collecter les emails de chaque mairie en "scrappant" leurs sites en les sauvegardant dans un fichier JSON 
-Envoyer un email à chacune d'entre elles de part un message présentant la formation 
-Twitter chacune d'entre elles 
+Collecter les emails de chaque mairie en "scrappant" leurs sites en les sauvegardant dans un fichier JSON  
+Envoyer un email à chacune d'entre elles de part un message présentant la formation  
+Twitter chacune d'entre elles  
  
 
 
