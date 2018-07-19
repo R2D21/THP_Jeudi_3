@@ -8,15 +8,45 @@ require_relative './lib/app/townhalls_mailer'
 require_relative './lib/app/townhalls_scrapper'
 
 
-puts 'Welcome! First of all, let me scrap the emails of all town halls of the 10th department...'
-puts '(it may take few minutes depending on your connection, sorry)'
+puts 'BONJOUR! Tout d\'abord, , nous allons scrapper tous les mails des mairies du département 10...'
+puts '(Cela peut prendre du temps suivant votre connexion, désolé...)'
+
 
 save_cities
 
-puts ' =======> the files has been saved on ./lib/town_halls.json'
+
+puts 'Bien! le fichier a été sauvegardé dans un fichier JSON dans le dossier /db'
+
+puts 'Souhaitez vous envoyer le message de THP aux mairies (tapez 1)'
+
+# @json_file_created = 0
+
+loop do
+  puts '(press 0 to quit)'
+  print '> '
 
 
+   choice = gets.chomp.to_i
 
 
+   unless [0, 1].include?(choice)
+    loop do
+      puts 'Wrong entry. Please choose 1 or 2:'
+      print '> '
+      choice = gets.chomp.to_i
 
-# Mailer.new.perform
+      break if [1].include?(choice)
+    end
+  end
+
+    if choice.zero?
+    puts 'Au revoir!'
+    break
+  end
+
+
+  if choice == 1
+Mailer.new.perform
+end
+end
+
