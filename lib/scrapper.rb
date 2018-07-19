@@ -1,3 +1,6 @@
+require "url"
+require "email"
+
 class Scrapper
   def   initialize(link)
     url = Url.new(link)

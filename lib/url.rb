@@ -1,3 +1,5 @@
+require "nokogiri"
+
 class Url
   def   initialize(page_url)
     @page_url = page_url
