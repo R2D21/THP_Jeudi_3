@@ -1,6 +1,6 @@
 # Travail du Jeudi S3 THP en groupe
 
-Contributeurs : Jeremie EDERY, Eangly ENG, Rémi BOIVIN, Kwevan GOUACIDE, Amélie FOULQUIER, Stéphane RABENARISOA
+Contributeurs : Jeremie EDERY, Eangly ENG, Rémi BOIVIN, Kwevan GOUACIDE, Amélie FOULQUIER, Stéphane
 
 Ce projet à pour but d'informer toutes les mairies de l'existence de la formation The Hacking Project
 
@@ -42,4 +42,4 @@ Répartition des tâches
 
 Mailer :  Eangly ENG & Kwevan GOUACIDE
 Scrapping : Rémi BOIVIN & Jeremie EDERY
-Bot Twitter : Amélie FOULQUIER & Stéphane RABENARISOA
+Bot Twitter : Amélie FOULQUIER & Stéphane
