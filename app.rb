@@ -2,7 +2,6 @@
 require 'gmail'
 require 'json'
 
-
 $LOAD_PATH.unshift File.expand_path('./../lib', __dir__)
 require_relative './lib/app/townhalls_mailer'
 require_relative './lib/app/townhalls_scrapper'
@@ -16,18 +15,14 @@ save_cities
 
 
 puts 'Bien! le fichier a été sauvegardé dans un fichier JSON dans le dossier /db'
-
 puts 'Souhaitez vous envoyer le message de THP aux mairies (tapez 1)'
 
-# @json_file_created = 0
 
 loop do
   puts '(press 0 to quit)'
   print '> '
 
-
    choice = gets.chomp.to_i
-
 
    unless [0, 1].include?(choice)
     loop do
@@ -46,7 +41,8 @@ loop do
 
 
   if choice == 1
-Mailer.new.perform
-end
+    Mailer.new.perform
+  end
+
 end
 

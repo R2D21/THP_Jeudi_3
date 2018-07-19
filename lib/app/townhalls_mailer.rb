@@ -19,7 +19,7 @@ class Mailer
   def send_mail(commune, my_mail)
     @gmail.deliver do
       to my_mail
-      subject 'Having fun in Puerto Rico!' # objet
+      subject 'J\'aimerai vous présenter une formation gratuite de programmation informatique' # objet
       text_part do
         body 'Text of plaintext message.' # aucune idée de ce que ça fait
       end
@@ -34,7 +34,7 @@ class Mailer
           Charles, co-fondateur de The Hacking Project pourra répondre à toutes vos questions : 06.95.46.60.80"
       end
     end
-    puts "Vos mails ont été envoyé!!!!!"
+    puts "Mail envoyé!!!!!"
   end
 
   def perform
