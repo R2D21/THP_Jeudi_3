@@ -31,7 +31,7 @@ Démarrer le script
 
 ### envoi de mails avec votre compte gmail
  
-Dans le terminal 
+Dans le terminal
 
 1. `touch .env`
 2. `open .env`
@@ -50,13 +50,12 @@ Dans le terminal
 1. `touch .env`
 2. `open .env`
 
-
 Dans le fichier .env
 
-TWITTER_API_KEY="api_key"  
-TWITTER_API_SECRET="api_secret"  
-TWITTER_ACCESS_TOKEN="taccess_token"  
-TWITTER_ACCESS_TOKEN_SECRET="token_secret"  
+TWITTER_API_KEY=" votre api_key"  
+TWITTER_API_SECRET=" votre api_secret"  
+TWITTER_ACCESS_TOKEN=" votre access_token"  
+TWITTER_ACCESS_TOKEN_SECRET=" votre token_secret"  
 
 
 ### A propos du projet
