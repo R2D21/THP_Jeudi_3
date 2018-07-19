@@ -1,6 +1,6 @@
 # Travail du Jeudi S3 THP en groupe
 
-Contributeurs : Jeremie EDERY, Eangly ENG, Rémi BOIVIN, Kwevan GOUACIDE, Amélie FOULQUIER, Stéphane
+> Contributeurs : Jeremie EDERY, Eangly ENG, Rémi BOIVIN, Kwevan GOUACIDE, Amélie FOULQUIER, Stéphane
 
 Ce projet à pour but d'informer toutes les mairies de l'existence de la formation The Hacking Project
 
@@ -18,27 +18,25 @@ Twitter chacune d'entre elles
 
 
 
-Utilisation
+### Utilisation
 
 Installer les gems :
 
-bundle install
+`bundle install`
 
 Démarrer le script
 
-ruby app.rb
+`ruby app.rb`
 
 
-A propos du projet
+### A propos du projet
 
 
 app.rb démarre l'application, et rassemble les différentes parties entre elles
 db/ contient les fichiers json
 lib/ contient les classes utilisées pour le Scrapping, les tweets ainsi que l'envoi des mails
 
-
-
-Répartition des tâches
+### Répartition des tâches
 
 Mailer :  Eangly ENG & Kwevan GOUACIDE
 Scrapping : Rémi BOIVIN & Jeremie EDERY
