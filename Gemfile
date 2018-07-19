@@ -4,4 +4,5 @@ gem 'fakefs', '= 0.5.2'
 gem 'open-uri-s3'
 gem 'twitter'
 gem 'dotenv'
-gem 'twitter_search'
+gem 'gmail'
+
