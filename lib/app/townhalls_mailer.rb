@@ -4,13 +4,14 @@ require 'json'
 class Mailer
   attr_accessor :username, :password, :gmail
   def initialize
-    puts "Connexion à ton compte MAIL"
+    puts "Connexion à ton compte MAIL pour envoyer les mails aux mairies"
    puts "Entre ton mail (GMAIL)"
  print ">"
     @username = gets.chomp
   puts "Entre ton mot de passe"
   print ">"
     @password = gets.chomp
+    puts "Vos mails ont été envoyé!!!!!"
 
     @gmail = Gmail.connect(username, password)
     end
