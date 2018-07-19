@@ -24,4 +24,8 @@ class Scrapper
     end
     @emails.get_all_mails(linkers_tmp)
   end
+
+  def get_towns
+    get_uri_code(@link)
+  end
 end
