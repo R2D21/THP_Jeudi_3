@@ -6,9 +6,9 @@ Ce projet à pour but d'informer toutes les mairies de l'existence de la formati
 
 Nous avons choisi de nous focaliser sur 3 départements :
 
-Le Val-de-Marne
-La Gironde
-L'Aube
+* Le Val-de-Marne
+* La Gironde
+* L'Aube
 
 Le script est réparti en 3 étapes :
 
