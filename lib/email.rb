@@ -2,7 +2,6 @@ class Email
   def   initialize(links)
     @emails = []
     @links = links
-    @url = url
   end
 
   def get_all_mails()
